@@ -1,16 +1,6 @@
-# BigMap
+# american fuzzy lop plus plus (afl++)
 
-  This is the BigMap integration on afl++.
-
-  AFL and its derivative fuzzers usually store the coverage information (e.g., bucketed edge hit count) in a small bitmap. This coverage bitmap is accessed very frequently and should occupy faster cache levels to maximize the testcase generation throughput. For this reason, the size of the bitmap  has  historically  been  kept  small  (the  default  size  is 64kB  for  AFL).  Due  to  the  bitmap’s  size  limitation  and the  randomness  of  the  location  assignment,  it  is  likely to  have  hash  collisions,  where  two  or  more  edges  point  tothe same location on the bitmap. Hash collisions introduce ambiguity  in  coverage  feedback  and  can  severely  limit  the fuzzer’s  ability  to  find  bugs. The straightforward way for reducing hash collisions isto  expand  the  hash  space  (i.e.,  increase  coverage  bitmap size).  However, naively  enlarging  the  bitmap can  severely  diminish  the  test  case  generation  throughput, potentially resulting in lower code coverage within the same time  budget.
-
-  BigMap introduces a two-level hashing scheme that enables using an arbitrarily large coverage bitmap with minimum throughput loss. Details on BigMap's working priciple can be found in the following paper:
-
-  Alif Ahmed, Jason D. Hiser, Anh Nguyen-Tuong, Jack W. Davidson, Kevin Skadron, "BigMap: Future-proofing Fuzzers with Efficient Large Maps", IEEE International Conference on Dependable Systems and Networks (DSN), 2021.
-
-  The rest of the README is from original afl++.
-
-## american fuzzy lop plus plus (afl++)
+  ![Travis State](https://api.travis-ci.com/vanhauser-thc/AFLplusplus.svg?branch=master)
 
   Release Version: 2.60c 
 
